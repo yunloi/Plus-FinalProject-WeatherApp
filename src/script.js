@@ -53,6 +53,16 @@ function showTemperature(response) {
   humid.innerHTML = `${Math.round(response.data.main.humidity)}%`;
   let currentCity = document.querySelector("#city-name");
   currentCity.innerHTML = `${response.data.name}`;
+  let temperatureDescription = document.querySelector(
+    "#temperature-description"
+  );
+  temperatureDescription.innerHTML = `${response.data.weather[0].description}`;
+  let weatherIcon = document.querySelector("#weather-icon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weatherIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(event) {
@@ -86,3 +96,5 @@ function getCurrentPosition(event) {
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click", getCurrentPosition);
+
+searchCity("Sydney");
