@@ -33,6 +33,7 @@ a {
   border: 1px solid #1d1e20;
   border-radius: 5px;
   margin: 20px auto;
+  background: rgb(146, 201, 247);
 }
 
 .temperature {
@@ -49,27 +50,6 @@ a {
 .now {
   position: relative;
   top: 30px;
-}
-
-.search-city {
-  position: relative;
-  left: 700px;
-  top: 10px;
-  width: 200px;
-}
-
-.search-button {
-  position: relative;
-  left: 905px;
-  top: -27px;
-  width: 100px;
-}
-
-.current-button {
-  position: relative;
-  left: 905px;
-  top: -27px;
-  width: 100px;
 }
 
 .now-weatherIcon {

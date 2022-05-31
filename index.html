@@ -31,24 +31,30 @@
     <div class="container">
       <div class="weather-frame">
         <form id="search-city-form">
-          <input
-            type="text"
-            placeholder="Enter your City..."
-            autocomplete="off"
-            autofocus="on"
-            id="search-city-input"
-            class="form-control search-city"
-          />
-          <button type="submit" class="btn btn-light search-button">
-            Search
-          </button>
-          <button
-            type="submit"
-            class="btn btn-dark current-button"
-            id="current-button"
-          >
-            Current
-          </button>
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="Enter your City..."
+                autocomplete="off"
+                autofocus="on"
+                id="search-city-input"
+                class="form-control search-city"
+              />
+            </div>
+            <div class="col-1">
+              <button type="submit" class="btn btn-light w-200">Search</button>
+            </div>
+            <div class="col-1">
+              <button
+                type="submit"
+                class="btn btn-dark w-200"
+                id="current-button"
+              >
+                Current
+              </button>
+            </div>
+          </div>
         </form>
 
         <h1></h1>
