@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plus - Week 6 - Homework</title>
+    <title>Plus - Week 7 - Homework</title>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -29,125 +29,128 @@
   </head>
   <body>
     <div class="container">
-      <form id="search-city-form">
-        <input
-          type="text"
-          placeholder="Enter your City..."
-          autocomplete="off"
-          autofocus="on"
-          id="search-city-input"
-          class="form-control search-city"
-        />
-        <button type="submit" class="btn btn-light search-button">
-          Search
-        </button>
-        <button
-          type="submit"
-          class="btn btn-dark current-button"
-          id="current-button"
-        >
-          Current
-        </button>
-      </form>
+      <div class="weather-frame">
+        <form id="search-city-form">
+          <input
+            type="text"
+            placeholder="Enter your City..."
+            autocomplete="off"
+            autofocus="on"
+            id="search-city-input"
+            class="form-control search-city"
+          />
+          <button type="submit" class="btn btn-light search-button">
+            Search
+          </button>
+          <button
+            type="submit"
+            class="btn btn-dark current-button"
+            id="current-button"
+          >
+            Current
+          </button>
+        </form>
 
-      <h1></h1>
-      <h2 id="city-name"></h2>
-      <div class="row">
-        <div class="col-6">
-          <i class="fa-solid fa-sun now-weatherIcon"></i>
-          <div class="card current-weather">
-            <h3>
-              <span class="temperature" id="temperature-reading">20</span
-              ><span class="units"
-                ><a href="#" id="link-celsius">℃</a> |
-                <a href="#" id="link-fahrenheit">℉</a>
-                <div class="now">Now</div>
-              </span>
-            </h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="card extra-info">
+        <h1></h1>
+        <h2 id="city-name"></h2>
         <div class="row">
-          <div class="col-6">High</div>
-          <div class="col-6" id="max-temp">25℃</div>
-          <div class="col-6">Low</div>
-          <div class="col-6" id="min-temp">18℃</div>
-          <div class="col-6">Wind</div>
-          <div class="col-6" id="wind-speed">10m/s</div>
-          <div class="col-6">Humidity</div>
-          <div class="col-6" id="humid">60%</div>
-        </div>
-      </div>
-
-      <hr />
-      <h4>Next 5 Days</h4>
-
-      <div class="row forecast-border">
-        <div class="card col-2 forecast">
-          <h5>Friday</h5>
-          <img src="images/sunny.png" />
-          <div class="row">
-            <div class="col-6">High</div>
-            <div class="col-6">30℃</div>
-            <div class="col-6">Low</div>
-            <div class="col-6">20℃</div>
-            <div class="col-6">Rain</div>
-            <div class="col-6">0%</div>
+          <div class="col-6">
+            <i class="fa-solid fa-sun now-weatherIcon"></i>
+            <div class="card current-weather">
+              <h3>
+                <span class="temperature" id="temperature-reading">20</span
+                ><span class="units"
+                  ><a href="#" id="link-celsius">℃</a> |
+                  <a href="#" id="link-fahrenheit">℉</a>
+                  <div class="now">Now</div>
+                </span>
+              </h3>
+            </div>
           </div>
         </div>
 
-        <div class="card col-2 forecast">
-          <h5>Saturday</h5>
-          <img src="images/cloudy.png" />
+        <div class="card extra-info">
           <div class="row">
             <div class="col-6">High</div>
-            <div class="col-6">24℃</div>
+            <div class="col-6" id="max-temp">25℃</div>
             <div class="col-6">Low</div>
-            <div class="col-6">16℃</div>
-            <div class="col-6">Rain</div>
-            <div class="col-6">20%</div>
+            <div class="col-6" id="min-temp">18℃</div>
+            <div class="col-6">Wind</div>
+            <div class="col-6" id="wind-speed">10m/s</div>
+            <div class="col-6">Humidity</div>
+            <div class="col-6" id="humid">60%</div>
           </div>
         </div>
-        <div class="card col-2 forecast">
-          <h5>Sunday</h5>
-          <img src="images/rain.png" />
-          <div class="row">
-            <div class="col-6">High</div>
-            <div class="col-6">22℃</div>
-            <div class="col-6">Low</div>
-            <div class="col-6">11℃</div>
-            <div class="col-6">Rain</div>
-            <div class="col-6">80%</div>
+
+        <hr />
+        <h4>Next 5 Days</h4>
+
+        <div class="row forecast-border">
+          <div class="card col-2 forecast">
+            <h5>Friday</h5>
+            <img src="images/sunny.png" />
+            <div class="row">
+              <div class="col-6">High</div>
+              <div class="col-6">30℃</div>
+              <div class="col-6">Low</div>
+              <div class="col-6">20℃</div>
+              <div class="col-6">Rain</div>
+              <div class="col-6">0%</div>
+            </div>
           </div>
-        </div>
-        <div class="card col-2 forecast">
-          <h5>Monday</h5>
-          <img src="images/cloud-sun.png" />
-          <div class="row">
-            <div class="col-6">High</div>
-            <div class="col-6">25℃</div>
-            <div class="col-6">Low</div>
-            <div class="col-6">18℃</div>
-            <div class="col-6">Rain</div>
-            <div class="col-6">5%</div>
+
+          <div class="card col-2 forecast">
+            <h5>Saturday</h5>
+            <img src="images/cloudy.png" />
+            <div class="row">
+              <div class="col-6">High</div>
+              <div class="col-6">24℃</div>
+              <div class="col-6">Low</div>
+              <div class="col-6">16℃</div>
+              <div class="col-6">Rain</div>
+              <div class="col-6">20%</div>
+            </div>
           </div>
-        </div>
-        <div class="card col-2 forecast">
-          <h5>Tuesday</h5>
-          <img src="images/sunny.png" />
-          <div class="row">
-            <div class="col-6">High</div>
-            <div class="col-6">27℃</div>
-            <div class="col-6">Low</div>
-            <div class="col-6">18℃</div>
-            <div class="col-6">Rain</div>
-            <div class="col-6">1%</div>
+          <div class="card col-2 forecast">
+            <h5>Sunday</h5>
+            <img src="images/rain.png" />
+            <div class="row">
+              <div class="col-6">High</div>
+              <div class="col-6">22℃</div>
+              <div class="col-6">Low</div>
+              <div class="col-6">11℃</div>
+              <div class="col-6">Rain</div>
+              <div class="col-6">80%</div>
+            </div>
+          </div>
+          <div class="card col-2 forecast">
+            <h5>Monday</h5>
+            <img src="images/cloud-sun.png" />
+            <div class="row">
+              <div class="col-6">High</div>
+              <div class="col-6">25℃</div>
+              <div class="col-6">Low</div>
+              <div class="col-6">18℃</div>
+              <div class="col-6">Rain</div>
+              <div class="col-6">5%</div>
+            </div>
+          </div>
+          <div class="card col-2 forecast">
+            <h5>Tuesday</h5>
+            <img src="images/sunny.png" />
+            <div class="row">
+              <div class="col-6">High</div>
+              <div class="col-6">27℃</div>
+              <div class="col-6">Low</div>
+              <div class="col-6">18℃</div>
+              <div class="col-6">Rain</div>
+              <div class="col-6">1%</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="source-code">
       <a href="https://github.com/yunloi/Plus-Week6-Homework" target="_blank"
         >Open source code</a

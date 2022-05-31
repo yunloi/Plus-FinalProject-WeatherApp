@@ -1,27 +1,23 @@
 body {
-  background: rgb(190, 217, 247);
+  font-family: "Patua One", cursive;
 }
 
 h1 {
   text-align: center;
   margin-top: 80px;
-  font-family: "Patua One", cursive;
 }
 
 h2 {
   text-align: center;
   margin-top: 20px;
-  font-family: "Patua One", cursive;
 }
 
 h4 {
   margin: 15px;
-  font-family: "Patua One", cursive;
 }
 
 h5 {
   text-align: center;
-  font-family: "Patua One", cursive;
 }
 
 hr {
@@ -30,6 +26,13 @@ hr {
 
 a {
   text-decoration: none;
+}
+
+.weather-frame {
+  padding: 20px;
+  border: 1px solid #1d1e20;
+  border-radius: 5px;
+  margin: 20px auto;
 }
 
 .temperature {
@@ -110,5 +113,4 @@ a {
 
 .source-code {
   margin: 0 100px 30px;
-  font-family: "Patua One", cursive;
 }
