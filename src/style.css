@@ -10,6 +10,7 @@ h1 {
 h2 {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 h4 {
@@ -20,6 +21,17 @@ h5 {
   text-align: center;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 hr {
   margin: -50px 30px 30px 30px;
 }
@@ -28,11 +40,16 @@ a {
   text-decoration: none;
 }
 
+.wrapper {
+  margin: 20px auto;
+  max-width: 900px;
+}
+
 .weather-frame {
   padding: 20px;
   border: 1px solid #1d1e20;
   border-radius: 5px;
-  margin: 20px auto;
+
   background: rgb(146, 201, 247);
 }
 
@@ -48,38 +65,37 @@ a {
 }
 
 .now {
-  position: relative;
   top: 30px;
+  position: relative;
 }
 
 .now:first-letter {
   text-transform: capitalize;
 }
 
-.icon {
-  display: block;
-  position: relative;
-  margin: 60px 150px 0 250px;
-  width: 100px;
+.fix-icon img {
+  height: 200px;
+  width: 200px;
+  margin-top: 0;
+  margin-bottom: 50px;
+  margin-left: 50px;
 }
 
 .current-weather {
   display: block;
-  margin: -90px 160px 0 420px;
-  width: 180px;
+  margin: 0 auto;
+  width: 200px;
   text-align: center;
   opacity: 75%;
 }
 
 .extra-info {
   display: block;
+  margin: 0 auto;
   background: rgba(247, 156, 156, 0.683);
   text-align: center;
   width: 180px;
   padding: 5px;
-  position: relative;
-  left: 650px;
-  bottom: 100px;
 }
 
 .forecast {
@@ -95,5 +111,5 @@ a {
 }
 
 .source-code {
-  margin: 0 100px 30px;
+  margin: 0 auto;
 }

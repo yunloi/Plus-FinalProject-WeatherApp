@@ -29,139 +29,148 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-frame">
-        <form id="search-city-form">
+      <div class="wrapper">
+        <div class="weather-frame">
+          <form id="search-city-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  placeholder="Enter your City..."
+                  autocomplete="off"
+                  autofocus="on"
+                  id="search-city-input"
+                  class="form-control search-city"
+                />
+              </div>
+              <div class="col-1">
+                <button type="submit" class="btn btn-light w-200">
+                  Search
+                </button>
+              </div>
+              <div class="col-1">
+                <button
+                  type="submit"
+                  class="btn btn-dark w-200"
+                  id="current-button"
+                >
+                  Current
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <h1></h1>
+          <h2 id="city-name">City</h2>
+
           <div class="row">
-            <div class="col-6">
-              <input
-                type="text"
-                placeholder="Enter your City..."
-                autocomplete="off"
-                autofocus="on"
-                id="search-city-input"
-                class="form-control search-city"
-              />
+            <div class="col-4">
+              <div class="fix-icon">
+                <img src="" alt="Clear" class="icon" id="weather-icon" />
+              </div>
             </div>
-            <div class="col-1">
-              <button type="submit" class="btn btn-light w-200">Search</button>
+
+            <div class="col-4">
+              <div class="card current-weather">
+                <h3>
+                  <span class="temperature" id="temperature-reading">20</span
+                  ><span class="units"
+                    ><a href="#" id="link-celsius">℃</a> |
+                    <a href="#" id="link-fahrenheit">℉</a>
+                    <div class="now" id="temperature-description">Now</div>
+                  </span>
+                </h3>
+              </div>
             </div>
-            <div class="col-1">
-              <button
-                type="submit"
-                class="btn btn-dark w-200"
-                id="current-button"
-              >
-                Current
-              </button>
-            </div>
-          </div>
-        </form>
 
-        <h1></h1>
-        <h2 id="city-name"></h2>
-        <div class="row">
-          <div class="col-6">
-            <img src="" alt="Clear" class="icon" id="weather-icon" />
-            <div class="card current-weather">
-              <h3>
-                <span class="temperature" id="temperature-reading">20</span
-                ><span class="units"
-                  ><a href="#" id="link-celsius">℃</a> |
-                  <a href="#" id="link-fahrenheit">℉</a>
-                  <div class="now" id="temperature-description">Now</div>
-                </span>
-              </h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="card extra-info">
-          <div class="row">
-            <div class="col-6">High</div>
-            <div class="col-6" id="max-temp">25℃</div>
-            <div class="col-6">Low</div>
-            <div class="col-6" id="min-temp">18℃</div>
-            <div class="col-6">Wind</div>
-            <div class="col-6" id="wind-speed">10m/s</div>
-            <div class="col-6">Humidity</div>
-            <div class="col-6" id="humid">60%</div>
-          </div>
-        </div>
-
-        <hr />
-        <h4>Next 5 Days</h4>
-
-        <div class="row forecast-border">
-          <div class="card col-2 forecast">
-            <h5>Friday</h5>
-            <img src="images/sunny.png" />
-            <div class="row">
-              <div class="col-6">High</div>
-              <div class="col-6">30℃</div>
-              <div class="col-6">Low</div>
-              <div class="col-6">20℃</div>
-              <div class="col-6">Rain</div>
-              <div class="col-6">0%</div>
+            <div class="col-4">
+              <div class="card extra-info">
+                <ul>
+                  <li>High: <span id="max-temp"></span></li>
+                  <li>Low: <span id="min-temp"></span></li>
+                  <li>Wind: <span id="wind-speed"></span></li>
+                  <li>Humidity: <span id="humid"></span></li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="card col-2 forecast">
-            <h5>Saturday</h5>
-            <img src="images/cloudy.png" />
-            <div class="row">
-              <div class="col-6">High</div>
-              <div class="col-6">24℃</div>
-              <div class="col-6">Low</div>
-              <div class="col-6">16℃</div>
-              <div class="col-6">Rain</div>
-              <div class="col-6">20%</div>
+          <hr />
+          <h4>Next 5 Days</h4>
+
+          <div class="row forecast-border">
+            <div class="card col-2 forecast">
+              <h5>Friday</h5>
+              <img src="images/sunny.png" />
+              <div class="row">
+                <div class="col-6">High</div>
+                <div class="col-6">30℃</div>
+                <div class="col-6">Low</div>
+                <div class="col-6">20℃</div>
+                <div class="col-6">Rain</div>
+                <div class="col-6">0%</div>
+              </div>
+            </div>
+
+            <div class="card col-2 forecast">
+              <h5>Saturday</h5>
+              <img src="images/cloudy.png" />
+              <div class="row">
+                <div class="col-6">High</div>
+                <div class="col-6">24℃</div>
+                <div class="col-6">Low</div>
+                <div class="col-6">16℃</div>
+                <div class="col-6">Rain</div>
+                <div class="col-6">20%</div>
+              </div>
+            </div>
+            <div class="card col-2 forecast">
+              <h5>Sunday</h5>
+              <img src="images/rain.png" />
+              <div class="row">
+                <div class="col-6">High</div>
+                <div class="col-6">22℃</div>
+                <div class="col-6">Low</div>
+                <div class="col-6">11℃</div>
+                <div class="col-6">Rain</div>
+                <div class="col-6">80%</div>
+              </div>
+            </div>
+            <div class="card col-2 forecast">
+              <h5>Monday</h5>
+              <img src="images/cloud-sun.png" />
+              <div class="row">
+                <div class="col-6">High</div>
+                <div class="col-6">25℃</div>
+                <div class="col-6">Low</div>
+                <div class="col-6">18℃</div>
+                <div class="col-6">Rain</div>
+                <div class="col-6">5%</div>
+              </div>
+            </div>
+            <div class="card col-2 forecast">
+              <h5>Tuesday</h5>
+              <img src="images/sunny.png" />
+              <div class="row">
+                <div class="col-6">High</div>
+                <div class="col-6">27℃</div>
+                <div class="col-6">Low</div>
+                <div class="col-6">18℃</div>
+                <div class="col-6">Rain</div>
+                <div class="col-6">1%</div>
+              </div>
             </div>
           </div>
-          <div class="card col-2 forecast">
-            <h5>Sunday</h5>
-            <img src="images/rain.png" />
-            <div class="row">
-              <div class="col-6">High</div>
-              <div class="col-6">22℃</div>
-              <div class="col-6">Low</div>
-              <div class="col-6">11℃</div>
-              <div class="col-6">Rain</div>
-              <div class="col-6">80%</div>
-            </div>
-          </div>
-          <div class="card col-2 forecast">
-            <h5>Monday</h5>
-            <img src="images/cloud-sun.png" />
-            <div class="row">
-              <div class="col-6">High</div>
-              <div class="col-6">25℃</div>
-              <div class="col-6">Low</div>
-              <div class="col-6">18℃</div>
-              <div class="col-6">Rain</div>
-              <div class="col-6">5%</div>
-            </div>
-          </div>
-          <div class="card col-2 forecast">
-            <h5>Tuesday</h5>
-            <img src="images/sunny.png" />
-            <div class="row">
-              <div class="col-6">High</div>
-              <div class="col-6">27℃</div>
-              <div class="col-6">Low</div>
-              <div class="col-6">18℃</div>
-              <div class="col-6">Rain</div>
-              <div class="col-6">1%</div>
-            </div>
+          <div class="source-code">
+            <a
+              href="https://github.com/yunloi/Plus-Week7-Homework"
+              target="_blank"
+              >Open source code</a
+            >
+            by Yun Loi Lok
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="source-code">
-      <a href="https://github.com/yunloi/Plus-Week6-Homework" target="_blank"
-        >Open source code</a
-      >
-      by Yun Loi Lok
     </div>
 
     <script src="src/script.js"></script>
