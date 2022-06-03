@@ -98,6 +98,8 @@ function getCurrentPosition(event) {
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureReading = document.querySelector("#temperature-reading");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureReading.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -105,6 +107,8 @@ function showFahrenheitTemperature(event) {
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureReading = document.querySelector("#temperature-reading");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   temperatureReading.innerHTML = Math.round(celsiusTemperature);
 }
 
