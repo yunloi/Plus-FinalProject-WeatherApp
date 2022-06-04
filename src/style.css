@@ -2,15 +2,16 @@ body {
   font-family: "Patua One", cursive;
 }
 
-h1 {
+.current-date-time {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
-h2 {
+.city {
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  font-weight: 900;
 }
 
 h4 {
@@ -33,7 +34,7 @@ li {
 }
 
 hr {
-  margin: -50px 30px 30px 30px;
+  margin: -10px 30px 30px 30px;
 }
 
 a {
@@ -73,11 +74,12 @@ a {
 }
 
 .fix-icon img {
+  display: block;
+  position: relative;
+  margin-left: 90px;
+  margin-top: -40px;
   height: 200px;
   width: 200px;
-  margin-top: 0;
-  margin-bottom: 50px;
-  margin-left: 50px;
 }
 
 .current-weather {
