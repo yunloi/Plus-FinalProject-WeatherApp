@@ -40,6 +40,32 @@ if (minutes < 10) {
 
 displayDate.innerHTML = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="card col-2 forecast">
+                <h5>${day}</h5>
+                <img src="" alt="Clear" class="icon" id="weather-icon" />
+                <div class="row">
+                  <div class="col-6">High</div>
+                  <div class="col-6">30℃</div>
+                  <div class="col-6">Low</div>
+                  <div class="col-6">20℃</div>
+                  <div class="col-6">Rain</div>
+                  <div class="col-6">0%</div>
+                </div>
+              </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let currentTemperature = document.querySelector("#temperature-reading");
   celsiusTemperature = response.data.main.temp;
@@ -127,3 +153,4 @@ let celsiusLink = document.querySelector("#link-celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Sydney");
+displayForecast();
