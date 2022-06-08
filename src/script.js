@@ -40,27 +40,51 @@ if (minutes < 10) {
 
 displayDate.innerHTML = `${day}, ${date} ${month} ${year}, ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="card col-2 forecast">
-                <h5>${day}</h5>
-                <img src="" alt="Clear" class="icon" id="weather-icon" />
+                <h5>${formatDay(forecastDay.dt)}</h5>
+                <img src=
+                "http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt="" class="icon" id="weather-icon" />
                 <div class="row">
                   <div class="col-6">High</div>
-                  <div class="col-6">30℃</div>
+                  <div class="col-6">${Math.round(forecastDay.temp.max)}℃</div>
                   <div class="col-6">Low</div>
-                  <div class="col-6">20℃</div>
-                  <div class="col-6">Rain</div>
-                  <div class="col-6">0%</div>
+                  <div class="col-6">${Math.round(forecastDay.temp.min)}℃</div>
+                  <div class="col-6">Wind</div>
+                  <div class="col-6">${Math.round(
+                    forecastDay.wind_speed
+                  )}m/s</div>
                 </div>
               </div>
   `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -163,4 +187,3 @@ let celsiusLink = document.querySelector("#link-celsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 searchCity("Sydney");
-displayForecast();
